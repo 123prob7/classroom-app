@@ -10,7 +10,7 @@ export default function ActionAreaCard({ className, section }) {
   return (
     <Card sx={{ height: "16rem", width: "20rem" }}>
       <CardActionArea>
-        <CardMedia component="img" height="9rem" image={CLASS_BANNER_IMAGE} alt="class banner" />
+        <CardMedia component="img" sx={{ height: "9rem" }} image={CLASS_BANNER_IMAGE} alt="class banner" />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {className}
