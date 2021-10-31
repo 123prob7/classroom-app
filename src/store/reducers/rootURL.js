@@ -1,3 +1,5 @@
+import rootUrl from "../../util/config";
+
 const initialState = { url: null };
 
 export default function reducer(state = initialState, action) {
@@ -7,7 +9,7 @@ export default function reducer(state = initialState, action) {
     case "create_root_url":
       return {
         ...state,
-        url: payload,
+        url: rootUrl + payload,
       };
     default:
       return state;

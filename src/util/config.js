@@ -3,4 +3,5 @@ export const API_CLASS_URL = "https://react-classroom-api.herokuapp.com/api/clas
 export const COOKIE_FIELD_NAME = "myCat";
 
 //strictly set url to match hosting page
-export const CLASS_BANNER_IMAGE = "/classroom-app/static/images/jerry.jpg";
+export const rootUrl = "/classroom-app";
+export const CLASS_BANNER_IMAGE = rootUrl + "/static/images/jerry.jpg";
