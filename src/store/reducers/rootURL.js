@@ -1,4 +1,4 @@
-import rootUrl from "../../util/config";
+import { rootUrl } from "../../util/config";
 
 const initialState = { url: null };
 
