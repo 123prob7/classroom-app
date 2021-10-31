@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Classroom from "./ClassManagement/Classroom";
 import Login from "./Login/Login";
 import Signup from "./Signup/Signup";
-import { BrowserRouter as Router, Redirect, Route, Switch, useRouteMatch } from "react-router-dom";
+import { Redirect, Route, Switch, useRouteMatch } from "react-router-dom";
 import act from "../actions/sessions";
 import { AuthRoute, ProtectedRoute } from "../util/route";
 import { useDispatch, useSelector } from "react-redux";
@@ -23,7 +23,7 @@ export default function MainRoute() {
   }, []);
 
   return (
-    <Router>
+    <div>
       <Switch>
         <ProtectedRoute isLoggedIn={isLoggedIn} path={`${url}/class`} component={() => <Classroom />} />
         <AuthRoute isLoggedIn={isLoggedIn} path={`${url}/signup`} component={Signup} />
@@ -43,6 +43,6 @@ export default function MainRoute() {
         draggable
         pauseOnHover
       />
-    </Router>
+    </div>
   );
 }
