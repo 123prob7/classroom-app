@@ -18,7 +18,7 @@ export default function ButtonAppBar({ handlePost }) {
   const [open, setOpen] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
 
-  const currentUser = useSelector((state) => state.user);
+  const currentUser = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
 
   const handleMenu = (event) => {

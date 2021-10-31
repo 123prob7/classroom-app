@@ -5,12 +5,13 @@ import { AccountCircle } from "@mui/icons-material";
 import { Button, TextField, Typography } from "@mui/material";
 import { toast } from "react-toastify";
 import act from "../../actions/sessions";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function Signup() {
   const [userN, setUserN] = useState("");
   const [pwd, setPwd] = useState("");
   const [pwd2, setPwd2] = useState("");
+  const { url } = useSelector((state) => state.rootURL);
 
   const dispatch = useDispatch();
 
@@ -25,9 +26,7 @@ export default function Signup() {
       return;
     }
 
-    dispatch(
-      act.signup(userN, pwd)
-    );
+    dispatch(act.signup(userN, pwd));
   };
   return (
     <form action="/" method="POST" onSubmit={handleSubmit}>
@@ -71,7 +70,7 @@ export default function Signup() {
             </Button>
           )}
         </Box>
-        <Link className="pb-4 text-blue-500" to="/login" sx={{ "text-decoration": "none" }}>
+        <Link className="pb-4 text-blue-500" to={`${url}/login`} sx={{ "text-decoration": "none" }}>
           Already has an account?
         </Link>
       </Box>

@@ -4,12 +4,13 @@ import { Link } from "react-router-dom";
 import { AccountCircle } from "@mui/icons-material";
 import { Button, TextField, Typography } from "@mui/material";
 import act from "../../actions/sessions";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function Login() {
   const [userN, setUserN] = useState("");
   const [pwd, setPwd] = useState("");
   const dispatch = useDispatch();
+  const { url } = useSelector((state) => state.rootURL);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -51,7 +52,7 @@ export default function Login() {
               Log In
             </Button>
           )}
-          <Link to="/signup" sx={{ "text-decoration": "none" }}>
+          <Link to={`${url}/signup`} sx={{ "text-decoration": "none" }}>
             <Button variant="outlined">Sign up</Button>
           </Link>
         </Box>
